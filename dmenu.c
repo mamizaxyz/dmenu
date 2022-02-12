@@ -368,6 +368,7 @@ keypress(XKeyEvent *ev)
 				insert(NULL, nextrune(-1) - cursor);
 			while (cursor > 0 && !strchr(worddelimiters, text[nextrune(-1)]))
 				insert(NULL, nextrune(-1) - cursor);
+			goto draw; /* don't really know why this is necessary here and not for the case above */
 			break;
 		case XK_y: /* paste selection */
 		case XK_Y:
