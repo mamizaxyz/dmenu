@@ -2,8 +2,8 @@
 
 cachedir=${XDG_CACHE_HOME:-"$HOME/.cache"}
 [ -d "$cachedir" ] || mkdir "$cachedir"
-cache=$HOME/.dmenu_cache
-historyfile=$HOME/.dmenu_history
+cache=$cachedir/dmenu_cache
+historyfile=$cachedir/dmenu_history
 
 IFS=:
 stest -dqr -n "$cache" $PATH && stest -flx $PATH | sort -u > "$cache"
